@@ -13,9 +13,21 @@ class Initial(Operator):
         return
 
     def operate(self, text: str, params: dict = None) -> str:
-        # split() trims whitespace and collapses multiple spaces
         words = text.split()
+        result = []
 
-        initials = [word[0].upper() + "." for word in words if word]
+        for word in words:
+            prefix = ""
+            initial_char = None
 
-        return " ".join(initials)
+            for ch in word:
+                if ch.isalnum():
+                    initial_char = ch.upper()
+                    break
+                else:
+                    prefix += ch
+
+            if initial_char:
+                result.append(f"{prefix}{initial_char}.")
+
+        return " ".join(result)
