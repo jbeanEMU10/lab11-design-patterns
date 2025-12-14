@@ -129,7 +129,7 @@ class OperatorsFactory:
         if not operators_by_type:
             logger.error(f"No such operator type {operator_type}")
             raise InvalidParamError(f"Invalid operator type '{operator_type}'.")
-
+        
         operator = operators_by_type.get(operator_name)
         if not operator:
             logger.error(f"No such operator {operator_name}")

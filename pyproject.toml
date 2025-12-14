@@ -1,5 +1,9 @@
 [tool.ruff]
-
+[tool.poetry]
+name = "presidio-anonymizer"
+version = "0.1.0"
+description = "Presidio anonymizer assignment"
+authors = ["Your Name <you@example.com>"]
 exclude = [
     # Ruff recommended:
     ".bzr",
