@@ -13,11 +13,9 @@ class Initial(Operator):
         return
 
     def operate(self, text: str, params: dict = None) -> str:
-        # Split on whitespace
+        # split() trims whitespace and collapses multiple spaces
         words = text.split()
 
-        # Take first character of each word, uppercase it, add "."
         initials = [word[0].upper() + "." for word in words if word]
 
-        # Join with spaces
         return " ".join(initials)
