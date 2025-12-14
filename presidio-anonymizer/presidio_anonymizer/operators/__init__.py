@@ -1,5 +1,5 @@
 """Initializing all the existing anonymizers."""
-
+from presidio_anonymizer.operators.initial import Initial
 from .operator import OperatorType, Operator  # isort:skip
 from .aes_cipher import AESCipher
 from .custom import Custom
@@ -37,6 +37,7 @@ __all__ = [
     "AESCipher",
     "OperatorsFactory",
     "AHDS_AVAILABLE",
+    "Initial",
 ]
 
 if AHDS_AVAILABLE:

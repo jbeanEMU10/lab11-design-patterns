@@ -9,21 +9,25 @@
 
 * A written description of the call stack leading to line 133 in operators_factory.py
 ```
-From the <module> sample.py (line 35), 
-to the main method in sample.py (line 29), 
-to the run_anonymizer method in the sample.py (line 13)
-to the anonymize method in AnonymizerEngine Class (line 104)
-[complete the call stack here]
+From the <module> block in sample.py (line 35),
+to the main method in sample.py (line 29),
+to the run_anonymizer method in sample.py (line 13),
+to the anonymize method in the AnonymizerEngine class (line 104),
+to the anonymize method in the EngineBase class,
+to the create_operator_class method in the OperatorsFactory class,
+to the __get_operators_classes method in OperatorsFactory,
+to the operator selection line in operators_factory.py (line 133):
+    operator = operators_by_type.get(operator_name)
 ```
 
 * How many if/elif branches are used in selecting the operator?
-*Put your answer here*
+0, operator selection is done via a dictionary lookup.
 
 * What data structure (a Python data type) exactly is used to select the operator?
-*Put your answer here*
+A dictionary (dict)
 
 * Explain how "Strategy" design pattern is reflected here.
-
+Each anonymization behavior is a separate strategy, and the factory selects which one to use at runtime.
 
 ---
 
